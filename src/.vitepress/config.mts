@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base:'/chldoc/',
-  title: "CHL-DOC",
+  title: "Chl-Doc",
   description: "A doc web!",
   themeConfig: {
     logo:'/mario.png',
