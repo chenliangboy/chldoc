@@ -20,6 +20,7 @@ export default defineConfig({
         items: [
           { text: 'Guide', link: '/markdown-examples' },
           { text: 'API', link: '/api-examples' },
+          { text: 'Nginx', link: '/nginx' },
         ]
       }
     ],
