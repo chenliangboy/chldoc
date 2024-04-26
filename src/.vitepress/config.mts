@@ -24,6 +24,13 @@ export default defineConfig({
             items: [
               { text: 'nginx', link: 'nginx' }
             ]
+          },
+          {
+            text: 'SpringBoot',
+            collapsed: false,
+            items: [
+              { text: 'Event', link: 'event' }
+            ]
           }
         ]
       },
