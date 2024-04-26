@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: alt
       text: Guide
-      link: /markdown-examples
+      link: /guide/
     - theme: brand
       text: API
-      link: /api-examples
+      link: /api/
   # image:
   #   src: /logo.svg
   #   alt: VitePress
