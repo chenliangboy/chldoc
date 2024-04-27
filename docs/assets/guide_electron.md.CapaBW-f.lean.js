@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.BxoeOxxJ.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{"outline":"deep"},"headers":[],"relativePath":"guide/electron.md","filePath":"guide/electron.md"}'),r={name:"guide/electron.md"};function a(n,c,s,d,i,l){return o(),t("div")}const m=e(r,[["render",a]]);export{_ as __pageData,m as default};

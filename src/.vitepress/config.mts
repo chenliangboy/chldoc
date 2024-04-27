@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base:'/chldoc/',
-  title: "Chl-Doc",
+  title: "Docs",
   description: "A doc web!",
   themeConfig: {
     logo:'/mario.png',
@@ -31,6 +31,21 @@ export default defineConfig({
             items: [
               { text: 'Event', link: 'event' }
             ]
+          },
+          {
+            text: 'NodeJs',
+            collapsed: false,
+            items: [
+              { text: 'electron', link: 'electron' },
+              { text: 'electron-builder', link: 'electron-builder' }
+            ]
+          },
+          {
+            text: 'Java',
+            collapsed: false,
+            items: [
+              { text: 'mysql', link: 'mysql' }
+            ]
           }
         ]
       },
@@ -42,6 +57,13 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'Spring', link: 'spring' }
+            ]
+          },
+          {
+            text: 'Nodejs',
+            collapsed: false,
+            items: [
+              { text: 'js', link: 'js' }
             ]
           }
         ]

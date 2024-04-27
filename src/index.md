@@ -3,12 +3,12 @@
 layout: home
 
 hero:
-  name: "Chl"
-  text: "Doc Web!"
-  tagline: 
+  name: Docs
+  text: ☺☺☺
+  tagline: 工作学习记录！！！
   actions:
     - theme: alt
-      text: Guide
+      text: 指南
       link: /guide/
     - theme: brand
       text: API
