@@ -26,10 +26,10 @@ kill -9 $(ps -ef|grep java | grep `pwd` |grep -v grep | awk '{print $2}'); sleep
 
 ```
 
-### 4. Tomcat日志 <code>*tail*</code>
+
+
+::: tip 4. Tomcat日志 <code>*tail*</code>
 ```sh
-
 tail -2000f ./logs/catalina.out; \r
-
 ```
-
+:::
