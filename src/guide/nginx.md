@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# 部署vue项目 https证书
+# nginx
 
-### https
+### 部署 vue https
 ```nginx
 server {
         listen       443 ssl http2;

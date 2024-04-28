@@ -19,13 +19,6 @@ export default defineConfig({
         base:'/guide/',
         items:[
           {
-            text: '部署',
-            collapsed: false,
-            items: [
-              { text: 'nginx', link: 'nginx' }
-            ]
-          },
-          {
             text: 'SpringBoot',
             collapsed: false,
             items: [
@@ -45,6 +38,21 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'mysql', link: 'mysql' }
+            ]
+          },
+          {
+            text: '封装',
+            collapsed: false,
+            items: [
+              { text: 'maven', link: 'maven' }
+            ]
+          },
+          {
+            text: '部署',
+            collapsed: false,
+            items: [
+              { text: 'nginx', link: 'nginx' },
+              { text: 'linux', link: 'linux' }
             ]
           }
         ]
