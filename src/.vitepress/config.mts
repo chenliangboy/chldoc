@@ -61,19 +61,20 @@ export default defineConfig({
         base:'/api/',
         items:[
           {
-            text: 'Java',
-            collapsed: false,
-            items: [
-              { text: 'Spring', link: 'spring' }
-            ]
-          },
-          {
             text: 'Nodejs',
             collapsed: false,
             items: [
               { text: 'js', link: 'js' }
             ]
+          },
+          {
+            text: 'Java',
+            collapsed: false,
+            items: [
+              { text: 'Spring', link: 'spring' }
+            ]
           }
+          
         ]
       },
       'help':{
