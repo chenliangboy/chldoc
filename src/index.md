@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Docs
-  text: ⚡️🖖⚡️
+  text: ⚡️🖖⚡️✋🏀
   tagline: 工作学习记录！！！
   actions:
     - theme: alt

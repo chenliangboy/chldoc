@@ -15,3 +15,25 @@ fetch(url)
     });
 ```
 
+###  2. <code>replace</code> 用法
+```js
+
+var str = "Hello World!";
+var res = str.replace("World", "JavaScript");
+console.log(res);
+
+// 输出：Hello JavaScript!
+
+var str = "Hello World!";
+var res = str.replace(/World/g, "JavaScript");
+console.log(res);
+// 输出：Hello JavaScript!
+
+var str = "Hello World!";
+var host = 'o'
+str = str?.replace(new RegExp(host, 'g'),'a');
+
+console.log(str);
+// 输出：Hella Warld!
+
+```

@@ -64,7 +64,9 @@ export default defineConfig({
             text: 'Nodejs',
             collapsed: false,
             items: [
-              { text: 'js', link: 'js' }
+              { text: 'js', link: 'js' },
+              { text: 'crypto', link: 'crypto' },
+              { text: 'promise', link: 'promise' }
             ]
           },
           {
