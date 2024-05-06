@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: Docs
-  text: ☺☺☺
+  text: ⚡️🖖⚡️
   tagline: 工作学习记录！！！
   actions:
     - theme: alt
@@ -13,16 +13,19 @@ hero:
     - theme: brand
       text: API
       link: /api/
-  # image:
-  #   src: /logo.svg
-  #   alt: VitePress
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  image:
+    src: /basketball.svg
+    alt: VitePress
+features:
+  - icon: ⚡️
+    title: Spring Boot
+    details: Makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run".
+  - icon: 🖖
+    title: Electron
+    details: Build cross-platform desktop apps with JavaScript, HTML, and CSS.
+  - icon: 🛠️
+    title: Node JS
+    details: Run JavaScript Everywhere.
 ---
 
 <style>
