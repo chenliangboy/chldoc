@@ -65,6 +65,7 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'js', link: 'js' },
+              { text: 'node', link: 'node' },
               { text: 'crypto', link: 'crypto' },
               { text: 'promise', link: 'promise' }
             ]
@@ -73,7 +74,8 @@ export default defineConfig({
             text: 'Java',
             collapsed: false,
             items: [
-              { text: 'Spring', link: 'spring' }
+              { text: 'Spring', link: 'spring' },
+              { text: 'Java', link: 'java' }
             ]
           }
           

@@ -31,3 +31,45 @@ formData.append('file', fs.createReadStream(filePath), {
 const res = await axios.post(url,formData,{headers: {...formData.getHeaders()}});
 console.log(res.data);
 ```
+
+3. 接口超时
+```js
+const url = '';
+axios.get(url,{timeout: 1000}).then(res=>{
+    console.log(res.data);
+}).catch(err=>{
+    console.log(err);
+    console.log('timeout');
+});
+```
+
+
+### <code>*compress*</code> 用法
+1. 压缩文件
+```js
+const compress = require('compress');
+compressing.zip.compressFile(path.join(filePath, fileName), zipFilePath, { zipFileNameEncoding: 'UTF-8' })
+      .then(() => {
+        console.log('zip success');
+      }).catch(err => {
+        console.log(err);
+      })
+compressing.zip.compressDir(filePath, zipPath, { zipFileNameEncoding: 'UTF-8' })
+      .then(() => {
+        console.log('zip success');
+      }).catch(err => {
+        console.log(err);
+      })
+
+```
+2. 解压文件
+```js
+const compress = require('compress');
+compressing.zip.uncompress(path.join(filePath, fileName), unZipFilePath, { zipFileNameEncoding: 'UTF-8' })
+      .then(() => {
+        console.log('unzip success');
+      }).catch(err => {
+        console.log(err);
+      })
+```
+

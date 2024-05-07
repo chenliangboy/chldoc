@@ -37,3 +37,51 @@ console.log(str);
 // 输出：Hella Warld!
 
 ```
+
+###  3. <code>*EventEmitter*</code> 用法
+```js
+class App extends EventEmitter {}
+
+const app = new App();
+app.on('event', function (a, b) {
+    console.log(a, b);
+});
+
+app.emit('event', 'a', 'b');
+
+```
+
+###  4. 自定义 <code>*Event*</code> 用法
+```js
+class Event {
+    constructor() {
+        this.events = {};
+    }
+    on(event, callback) {
+        if (!this.events[event]) {
+            this.events[event] = [];
+        }
+        this.events[event].push(callback);
+        return this;
+    }
+
+    emit(event, data) {
+        if (!this.events[event]) {
+            return this;
+        }
+        this.events[event].forEach(callback => {
+            callback(data);
+        });
+        retrurn this;
+    }
+}
+
+class App extends Event {}
+
+const app = new App();
+app.on('event', function (a, b) {
+    console.log(a, b);
+});
+app.emit('event', 'a', 'b');
+
+```
