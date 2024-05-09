@@ -73,3 +73,11 @@ compressing.zip.uncompress(path.join(filePath, fileName), unZipFilePath, { zipFi
       })
 ```
 
+### <code>*is-online*</code> 用法
+```js
+isOnline().then(online => {
+  console.log(online ? 'Online' : 'Offline');
+}).catch(err => {
+  console.error(err);
+});
+```

@@ -98,3 +98,49 @@ autoUpdater.on('update-downloaded', function (event) {
 });
 ```
 
+### 5.单例 <code>*requestSingleInstanceLock*</code>
+
+```js
+const additionalData = { myKey: packageJson.cms_version }
+const lock = app.requestSingleInstanceLock(additionalData);//锁定当前实例
+if (!lock) {//锁定失败，已存在实例
+    app.quit();//退出当前程序
+}
+
+```
+
+### 6.清理缓存 <code>*clearStorageData*</code>
+
+```js
+const clearObj = {
+  storages: ['appcache', 'cookies', 'filesystem', 'indexdb', 'localstorage', 'shadercache', 'websql', 'serviceworkers', 'cachestorage'],
+};
+BrowserWindow.getFocusedWindow().webContents.session.clearStorageData(clearObj);
+
+```
+
+### 7. 系统托盘 <code>*tray*</code>
+
+```js
+// 消息提示
+window.flashFrame(true);
+var count = 0;
+var timer = setInterval(function () {
+    if (count++ % 2 == 0) {
+        tray.setImage(config.image.icon.tray);//正常图片
+    } else {
+        tray.setImage(nativeImage.createFromPath(null))//空图片
+    }
+    //循环播放声音
+}, 600);
+
+tray.on('mouse-move', () => {
+    //鼠标移入托盘 闪烁时 显示飘窗
+});
+
+var trayBounds = tray.getBounds();//获取托盘图标位置
+var point = screen.getCursorScreenPoint();//获取鼠标位置
+if (point.x < trayBounds.x ...) {//鼠标移出托盘位置 隐藏飘窗
+
+}
+```

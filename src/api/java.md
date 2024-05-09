@@ -97,7 +97,65 @@ System.err.println("执行完毕！");
 
 ```
 
-#### 2. <code>*CyclicBarrier*</code>
+#### 2. <code>*ReentrantLock*</code>
+
+```java
+Lock lock = new ReentrantLock();
+lock.lock();
+lock.unlock();
+
+```
+
+
+
+## 三、函数式编程
+### 1. <code>*Consumer*</code> 
+一个参数无返回值
+```java
+public static void say(String msg){
+	System.out.println(msg);
+}
+
+Consumer<String> consumer = AppUtils::say;
+consumer.accept("hello world");
+
+
+```
+
+### 2. <code>*Function*</code> 
+一个参数一个返回值
+```java
+public static String say(String msg){
+	return "now saying" + msg;
+}
+Function<String,String> function = AppUtils::say;
+System.out.println(function.apply("hello world"));
+
+```
+
+### 3. <code>*Predicate*</code> 
+一个参数返回boolean
+```java
+public boolean isTrue(String msg){
+	return msg.equals("hello world");
+}
+Predicate<String> predicate = AppUtils::isTrue;
+System.out.println(predicate.test("hello world"));
+
+```
+
+### 4. <code>*Supplier*</code> 
+无参数返回值
+```java
+public static String say(){
+	return "hello world";
+}
+Supplier<String> supplier = AppUtils::say;
+System.out.println(supplier.get());
+
+
+```
+
 
 
 

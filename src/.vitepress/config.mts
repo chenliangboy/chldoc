@@ -67,7 +67,8 @@ export default defineConfig({
               { text: 'js', link: 'js' },
               { text: 'node', link: 'node' },
               { text: 'crypto', link: 'crypto' },
-              { text: 'promise', link: 'promise' }
+              { text: 'promise', link: 'promise' },
+              { text: 'cmd', link: 'cmd' }
             ]
           },
           {
