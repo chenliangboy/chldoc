@@ -156,7 +156,22 @@ System.out.println(supplier.get());
 
 ```
 
+### 5. 过滤器 <code>*Filter*</code>
 
+```java
+@WebFilter(urlPatterns="/septers/**",filterName="initFiter")
+public class InitFilter implements Filter{
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		//System.err.println("过滤器执行方法-----------");
+		chain.doFilter(request, response);
+	}
+	
+}
+
+```
 
 
 
