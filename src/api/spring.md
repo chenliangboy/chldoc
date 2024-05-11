@@ -52,6 +52,20 @@ public class WebMvcConfig implements WebMvcConfigurer{
 		log.error("CommandLineRunner");
 	}
 ```
+3. 实现接口<code>*ApplicationListener*</code>
+```java
+public class ApplicationListenerTest implements ApplicationListener<ApplicationReadyEvent> {
+	@Override
+	public void onApplicationEvent(ApplicationReadyEvent event) {
+		log.error("ApplicationReadyEvent");
+		log.error("event:{}",event);
+		log.error("event.getApplicationContext():{}",event.getApplicationContext());
+	}
+}
+
+```
+4. 实现接口<code>*SmartLifecycle*</code>
+
 
 
 ### 拦截器
@@ -72,7 +86,5 @@ public class LimiterIntercepter implements HandlerInterceptor {
 }
 
 ```
-
-### 
 
 
