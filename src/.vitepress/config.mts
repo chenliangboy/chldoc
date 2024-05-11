@@ -97,7 +97,7 @@ export default defineConfig({
       }
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/SepterChen/' }
+      { icon: 'github', link: 'https://github.com/chlyl/' }
     ],
     search:{provider:'local'}
   }
