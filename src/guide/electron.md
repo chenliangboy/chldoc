@@ -144,3 +144,40 @@ if (point.x < trayBounds.x ...) {//鼠标移出托盘位置 隐藏飘窗
 
 }
 ```
+
+### 8. 接口桥接 <code>*preload.js*</code>
+```js
+var { contextBridge } = require('electron')
+var { electronAPI } = require('@electron-toolkit/preload')
+// 自定义接口
+const api = {
+  
+}
+
+if (process.contextIsolated) {
+  try {
+    contextBridge.exposeInMainWorld('electron', electronAPI)
+    contextBridge.exposeInMainWorld('api', api)
+  } catch (error) {
+    console.error(error)
+  }
+} else {
+  window.electron = electronAPI
+  window.api = api
+}
+
+
+```
+
+### 9. 自定义窗口移动 <code>*BrowserWindow*</code>
+```js
+const { ipcMain,BrowserWindow,screen } = require('electron')
+
+ipcMain.on('moveWindow',(e,message)=>{
+    const window = BrowserWindow.getFocusedWindow();
+    var x = window.getBounds().x;
+    var y = window.getBounds().y;
+    window.setBounds({x:x+message.x,y:y+message.y});
+})
+
+```
