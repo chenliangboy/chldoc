@@ -81,3 +81,22 @@ isOnline().then(online => {
   console.error(err);
 });
 ```
+
+### <code>*jquery*</code> 用法
+
+1. 获取同级元素
+```js
+$('.class').siblings();//所有
+$('.class').prev();//前
+$('.class').after();//后
+
+```
+
+2. 遍历
+```js
+var obj = $(".class")
+$.each(obj,function(index,item){
+  console.log(index,item);
+})
+
+```

@@ -181,3 +181,29 @@ ipcMain.on('moveWindow',(e,message)=>{
 })
 
 ```
+
+### 10. 窗体隐藏显示 <code>*BrowserWindow*</code>
+
+```js
+// 监听窗体离开点击事件
+mainWindow.on('blur',()=>{
+    mainWindow.hide();
+})
+// 监听托盘点击事件
+tray.on('click', () => {
+  if (global.mainWindow) {
+    global.mainWindow.show();
+  }
+})
+// 解决窗口闪烁
+app.commandLine.appendSwitch('wm-window-animations-disabled');
+
+```
+
+### 11. 注册快捷键 <code>*globalShortcut*</code>
+```js
+globalShortcut.register('Ctrl+Space', () => {
+  global.mainWindow.isVisible() ? global.mainWindow.hide() : global.mainWindow.show();
+})
+
+```
