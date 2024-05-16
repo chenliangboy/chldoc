@@ -182,6 +182,7 @@ function say(msg){
 
 var fnString = `say("Hello World!")`;
 
+eval(fnString);
 
 
 ```
