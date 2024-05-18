@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# maven 打包 jar 包
+### springboot maven 打包 jar 包
 
 ``` xml
 <build>
@@ -35,4 +35,27 @@ outline: deep
             </plugin>
         </plugins>
     </build>
+```
+
+### sse通讯 <code>*SseEmitter*</code> 
+```java
+    @RequestMapping(value = {"/","index"},produces = "text/event-stream")
+	public SseEmitter index() {
+		SseEmitter emitter = new SseEmitter();
+		executor.submit(()->{
+			try {
+                while (true) {
+                    emitter.send(SseEmitter.event()
+                            .name("message")
+                            .data("Hello from the server! " + System.currentTimeMillis()));
+                    Thread.sleep(3000); // 每3秒发送一次消息
+                }
+            } catch (IOException | InterruptedException e) {
+                emitter.completeWithError(e);
+            }
+		});
+
+		return emitter;
+	}
+
 ```

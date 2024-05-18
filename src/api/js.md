@@ -186,3 +186,48 @@ eval(fnString);
 
 
 ```
+
+### 10. <code>*EventSource*</code> sse通讯
+```js
+var source = new EventSource('http://10.0.4.41:8099/api/sse/');
+source.onmessage = function(e) {
+    var content = document.getElementById('content');
+    var newMessage = document.createElement('p');
+    console.log(e);
+    newMessage.textContent = e.data;
+    content.appendChild(newMessage);
+};
+
+source.onerror = function(event) {
+    console.error("Error occurred:", event);
+};
+
+```
+
+### 11. 页面通讯 <code>*window.postMessage*</code> <code>*window.addEventListener*</code> 
+```js
+//发送
+window.opener.postMessage('Hello from Page A', 'https://example.com');
+
+// 监听
+window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://example.com') return; // 确保消息来源安全
+    console.log('Received message:', event.data);
+}, false);
+
+```
+
+### 12. 页面通讯 <code>*BroadcastChannel*</code>
+```js
+    // 创建一个通道
+   const bc = new BroadcastChannel('my-channel');
+
+   // 发送消息
+   bc.postMessage('Hello from Channel.');
+
+   // 接收消息
+   bc.onmessage = function(event) {
+       console.log('Received message:', event.data);
+   };
+```
+
