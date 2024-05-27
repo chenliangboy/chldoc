@@ -231,3 +231,15 @@ window.addEventListener('message', function(event) {
    };
 ```
 
+### 13. 地址解析 <code>*URL*</code>
+```js
+var url = new URL('https://example.com/path?query=string#hash');
+console.log(url.protocol);
+console.log(url.hostname);
+console.log(url.pathname);
+console.log(url.searchParams.get('query'));
+
+top.window.getParam = (key) => new URL(window.location.href).searchParams.get(key);
+console.log(getParam('query'));
+
+```
