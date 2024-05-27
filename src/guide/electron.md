@@ -166,6 +166,10 @@ if (process.contextIsolated) {
   window.api = api
 }
 
+// 使用
+window.electron.ipcRenderer.invoke('getData').then((res) => {
+  console.log(res)
+})
 
 ```
 

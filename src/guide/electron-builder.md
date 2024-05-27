@@ -15,10 +15,11 @@ outline: deep
       "artifactName": "${name}-${version}.exe",
       "requestedExecutionLevel": "requireAdministrator",
       "target": [
-        "nsis"
+        "nsis",//windows安装包
+        "portable"//windows免安装 直接运行
       ]
     },
-    "extraResources": {
+    "extraResources": {// from 文件夹内容 安装后 复制到 to 文件夹下
       "from": "./src/ico/",
       "to": "../"
     },

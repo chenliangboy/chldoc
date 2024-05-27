@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start":"npm run dev",
     "dev": "vitepress dev src",
     "build": "vitepress build src && npm run copy",
     "preview": "vitepress preview src",
