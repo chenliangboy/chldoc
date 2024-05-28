@@ -243,3 +243,46 @@ top.window.getParam = (key) => new URL(window.location.href).searchParams.get(ke
 console.log(getParam('query'));
 
 ```
+
+## 14. 通讯 <code>*WebSocket*</code>
+```js
+var url = 'ws://10.0.4.41:8099/api/ws/';
+var ws = new WebSocket(url);
+ws.onopen = function() {
+    console.log('WebSocket连接成功');
+    ws.send('Hello, Server!');
+}
+
+ws.onmessage = function(event) {
+    console.log('收到服务器消息：', event.data);
+    ws.close();
+}
+
+ws.onclose = function() {
+    console.log('WebSocket连接已关闭');
+}
+
+ws.onerror = function(error) {
+    console.error('WebSocket连接发生错误：', error);
+}
+
+```
+
+## 15. 数组队列 <code>*push && shift*</code>
+```js
+var datas = [];
+// push 入队
+datas.push('a');
+datas.push('b');
+datas.push('c');
+console.log(datas); // [ 'a', 'b', 'c' ]
+// shift 出队
+console.log(datas.shift()); //a
+console.log(datas); // [ 'b', 'c' ]
+console.log(datas.shift()); //b
+console.log(datas); // [ 'c' ]
+datas.push('d');
+console.log(datas); // [ 'c', 'd' ]
+
+
+```
