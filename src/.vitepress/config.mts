@@ -37,7 +37,8 @@ export default defineConfig({
             text: 'Java',
             collapsed: false,
             items: [
-              { text: 'mysql', link: 'mysql' }
+              { text: 'mysql', link: 'mysql' },
+              { text: 'netty', link: 'netty' }
             ]
           },
           {
