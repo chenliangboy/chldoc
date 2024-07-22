@@ -284,5 +284,42 @@ console.log(datas); // [ 'c' ]
 datas.push('d');
 console.log(datas); // [ 'c', 'd' ]
 
+```
+
+## 16. Function.prototype <code>*apply*</code> <code>*call*</code> <code>*bind*</code>
+```js
+
+function add(a, b) {
+    return a + b;
+}
+
+add.apply(null, [1, 2]);//接收参数数组
+add.call(null, 1, 2);//接收固定参数
+add.bind(null, 1, 2)();//接收固定参数，切换this，返回函数
+```
+
+## 17. 函数防抖 <code>*debounce*</code>
+```javascript
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, wait);
+  };
+}
+
+// 使用示例
+function handleInput(e) {
+  console.log('Input event triggered with value:', e.target.value);
+}
+
+const debouncedHandleInput = debounce(handleInput, 300);
+
+// 假设这是输入框的事件监听
+document.getElementById('inputBox').addEventListener('input', debouncedHandleInput);
 
 ```
+
+## 18. 函数节流 <code>*throttle*</code>
