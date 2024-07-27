@@ -211,3 +211,4 @@ globalShortcut.register('Ctrl+Space', () => {
 })
 
 ```
+

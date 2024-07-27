@@ -98,7 +98,7 @@ export default defineConfig({
       }
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/chlyl/' }
+      { icon: 'github', link: 'https://github.com/chl603/' }
     ],
     search:{provider:'local'}
   }
