@@ -88,3 +88,15 @@ public class LimiterIntercepter implements HandlerInterceptor {
 ```
 
 
+### 文件上传
+```java
+	@ResponseBody
+	@PostMapping("/upload")
+    public ResponseData upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) throws IOException {
+        String filename = file.getOriginalFilename();
+        file.transferTo(new File("/opt/grabview/"+filename));
+        return operateSucess("成功");
+    }	
+
+```
+

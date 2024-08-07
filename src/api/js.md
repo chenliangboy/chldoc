@@ -5,6 +5,7 @@ outline: deep
 # JavaScript 原生方法
 ###  1. <code>fetch</code> 用法
 ```js
+// get 请求
 var url = ``;
 fetch(url)
     .then(res=> {return res.json()})//转化json格式
@@ -13,6 +14,18 @@ fetch(url)
             //TODO 处理逻辑
         }
     });
+
+// post 请求
+var data = {};
+fetch(url,{
+    method: 'POST',//请求方式
+    headers: {
+        'Content-Type': 'application/json'//请求头
+    },
+    body: JSON.stringify(data)//请求体
+}).then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 ```
 
 ###  2. <code>replace</code> 用法
@@ -322,4 +335,36 @@ document.getElementById('inputBox').addEventListener('input', debouncedHandleInp
 
 ```
 
-## 18. 函数节流 <code>*throttle*</code>
+## 18. 事件触发 <code>*dispatchEvent*</code>
+```js
+var inputElement = document.getElementById('yourInputId');
+inputElement.value = '模拟输入的文本';
+inputElement.dispatchEvent(new Event('input', { bubbles: true }));
+inputElement.dispatchEvent(new Event('change', { bubbles: true }));
+```
+
+## 19. 反射和代理 <code>*Reflect*</code> <code>*Proxy*</code>
+```js
+    var target = {
+        foo: 1,
+        bar: 2
+    };
+    var handler = {
+        get: function(target, key, receiver) {
+            console.log('getting ' + key);
+            return Reflect.get(target, key, receiver);
+        },
+        set: function(target, key, value, receiver) {
+            console.log('setting ' + key + ' to ' + value);
+            return Reflect.set(target, key, value, receiver);
+        }
+    };
+    var proxy = new Proxy(target, handler);
+    proxy.foo;
+    proxy.bar = 3;
+    console.log(proxy.bar);
+    console.log(target.bar);
+    console.log(proxy.foo);
+
+    Reflect.apply(console.log, console, ['hello world']);
+```
