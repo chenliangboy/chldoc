@@ -11,6 +11,7 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '指南', link: '/guide/' },
+      { text: 'DESIGN', link: '/design/' },
       { text: 'API', link: '/api/' },
       { text: 'Help', link: '/help/markdown-examples' }
     ],
@@ -57,6 +58,17 @@ export default defineConfig({
             ]
           }
         ]
+      },
+      'design':{
+        base:'/design/',
+        items:[
+          {
+            text: '客户端',
+            collapsed: false,
+            items: [
+              { text: 'node', link: 'node' }
+            ]
+          }]
       },
       'api':{
         base:'/api/',
