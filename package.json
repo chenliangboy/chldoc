@@ -1,12 +1,12 @@
 {
   "scripts": {
-    "start":"npm run dev",
+    "start": "npm run dev",
     "dev": "vitepress dev src",
     "build": "vitepress build src && npm run copy",
     "preview": "vitepress preview src",
-    "copy":"build.bat"
+    "copy": "build.bat"
   },
   "dependencies": {
-    "vitepress": "^1.0.0-rc.33"
+    "vitepress": "^1.4.1"
   }
 }

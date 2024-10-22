@@ -1,1 +1,0 @@
-import{_ as a,c as s,o as e,a4 as i}from"./chunks/framework.BxoeOxxJ.js";const m=JSON.parse('{"title":"cmd命令","description":"","frontmatter":{"outline":"deep"},"headers":[],"relativePath":"api/cmd.md","filePath":"api/cmd.md"}'),t={name:"api/cmd.md"},n=i("",2),l=[n];function p(c,d,h,o,r,_){return e(),s("div",null,l)}const E=a(t,[["render",p]]);export{m as __pageData,E as default};

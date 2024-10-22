@@ -23,6 +23,7 @@ export default defineConfig({
             text: 'SpringBoot',
             collapsed: false,
             items: [
+              { text: 'springboot', link: 'springboot' },
               { text: 'Event', link: 'event' }
             ]
           },
@@ -81,7 +82,8 @@ export default defineConfig({
               { text: 'node', link: 'node' },
               { text: 'crypto', link: 'crypto' },
               { text: 'promise', link: 'promise' },
-              { text: 'cmd', link: 'cmd' }
+              { text: 'cmd', link: 'cmd' },
+              { text: 'ffmpeg', link: 'ffmpeg' }
             ]
           },
           {
@@ -110,7 +112,7 @@ export default defineConfig({
       }
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/chl603/' }
+      { icon: 'github', link: 'https://github.com/chenliangboy/' }
     ],
     search:{provider:'local'}
   }

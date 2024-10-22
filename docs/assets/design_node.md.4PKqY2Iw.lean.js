@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as n}from"./chunks/framework.BODqLb-n.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{"outline":"deep"},"headers":[],"relativePath":"design/node.md","filePath":"design/node.md"}'),o={name:"design/node.md"};function a(s,d,r,c,i,p){return n(),t("div")}const f=e(o,[["render",a]]);export{m as __pageData,f as default};

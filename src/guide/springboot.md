@@ -37,11 +37,13 @@ outline: deep
     </build>
 ```
 
-### sse通讯 <code>*SseEmitter*</code> 
+### sse通讯 <code>*SseEmitter*</code>
+1. 服务器端 
 ```java
     @RequestMapping(value = {"/","index"},produces = "text/event-stream")
 	public SseEmitter index() {
 		SseEmitter emitter = new SseEmitter();
+        int i = 0;
 		executor.submit(()->{
 			try {
                 while (true) {
@@ -49,6 +51,11 @@ outline: deep
                             .name("message")
                             .data("Hello from the server! " + System.currentTimeMillis()));
                     Thread.sleep(3000); // 每3秒发送一次消息
+                    if (i > 10) {
+                        emitter.complete();
+                        break;
+                    }
+                    i++;
                 }
             } catch (IOException | InterruptedException e) {
                 emitter.completeWithError(e);
@@ -57,6 +64,29 @@ outline: deep
 
 		return emitter;
 	}
+
+```
+2. 客户端请求 okhttp
+```java
+private final static OkHttpClient HTTP_CLIENT = new OkHttpClient.Builder().connectTimeout(90, TimeUnit.SECONDS) // 连接超时
+            .readTimeout(90, TimeUnit.SECONDS) // 读取超时
+            .writeTimeout(90, TimeUnit.SECONDS) // 写入超时
+            .build();
+public static void chat( String messages) throws IOException {
+        String requestBody = new JSONObject().putOpt("prompt", messages).putOpt("stream", true).toString();
+        
+        Request okhttpRequest = new Request.Builder().url(CHAT_COMPLETION_URL).post(RequestBody.create(requestBody, MediaType.get(ContentType.JSON.toString()))).build();
+        Call call = HTTP_CLIENT.newCall(okhttpRequest);
+        Response okhttpResponse = call.execute();
+        BufferedReader reader = new BufferedReader(okhttpResponse.body().charStream());
+        String line;
+        while ((line = reader.readLine()) != null) {
+            if (StrUtil.isBlank(line)) {
+                continue;
+            }
+            System.err.println(line);
+        }
+}
 
 ```
 
