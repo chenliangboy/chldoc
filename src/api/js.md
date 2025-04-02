@@ -368,3 +368,25 @@ inputElement.dispatchEvent(new Event('change', { bubbles: true }));
 
     Reflect.apply(console.log, console, ['hello world']);
 ```
+
+## 20. 全局Event事件处理 <code>*EventEmitter*</code>
+
+::: code-group
+```js [GlobalEvent.js]
+import { EventEmitter } from 'events';
+export const event = new EventEmitter();
+
+```
+```js [sender.js]
+import { event } from './GlobalEvent';
+event.on('message', (data) => {
+    console.log('Received message:', data);
+})
+
+```
+```js [reciever.js]
+import { event } from './GlobalEvent';
+event.emit('message', 'Hello, World!');
+
+```
+:::
