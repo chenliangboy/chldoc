@@ -93,8 +93,14 @@ export default defineConfig({
               { text: 'Spring', link: 'spring' },
               { text: 'Java', link: 'java' }
             ]
+          },
+          {
+            text: 'Tauri',
+            collapsed: false,
+            items: [
+              { text: 'tauri', link: 'tauri' }
+            ]
           }
-          
         ]
       },
       'help':{
